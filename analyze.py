@@ -74,7 +74,7 @@ for user, content in data:
 top_role_tokens = sorted(role_tokens.items(), key=lambda x: x[1], reverse=True)[:200]
 
 df = pandas.DataFrame(parsed_data)
-unique_users = False
+unique_users = True
 if unique_users:
     filtered_data = []
     for user, group in df.groupby("user"):
