@@ -85,6 +85,10 @@ if unique_users:
 in_age_range = np.logical_and(df.age.values >= 22, df.age.values <= 26)
 #df = df.iloc[in_age_range]
 
+plt.figure(figsize=(16, 9))
+df.loc[:, "salary_adjusted"].plot(kind="hist", bins=50)
+plt.savefig("AdjustedSalaries.png", dpi=100)
+
 print(
     "Token", "N", "Median", "Mean", "Std", "Correlation w/ age", "Mean age",
     sep="\t"
