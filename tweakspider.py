@@ -10,7 +10,6 @@ class TweakSpider(scrapy.Spider):
     start_urls = URLS
 
     def start_requests(self):
-    #headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.85 Safari/537.36'}
         for i, url in enumerate(self.start_urls):
             yield scrapy.http.Request(url,cookies=COOKIES, callback=self.parse)
 
